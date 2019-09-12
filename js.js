@@ -13,9 +13,13 @@ const toUpperLetter = document.getElementById('toUpperLetter');
 btnShow.addEventListener('click',function(){
 	let valueArea = document.getElementById('area').value;
   console.log(valueArea);
+  var regexspace = valueArea.replace(/[\r\n\x0B\x0C\u0085\u2028\u2029]+/g, ", ");
+  console.log(regexspace);
   var regex = new RegExp(',', 'g');
-  let outKoma = valueArea.replace(regex, '');
+  let outKoma = regexspace.replace(regex, '');
+  console.log(outKoma);
 	outKoma = outKoma.split(" ");
+    console.log(outKoma);
 	let upperArray = [];
  for (let text of outKoma) {
     upperArray.push(text.charAt(0).toUpperCase() + text.substr(1));

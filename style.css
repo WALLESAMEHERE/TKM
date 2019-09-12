@@ -3,7 +3,7 @@
 	font-size:23px;
 }
 body{
-	background: rgb(0,255,194);
+	background-image: url(img/bg_cosmo.jpg);
 	background-size:cover;
 	background-repeat: no-repeat;
 }

@@ -16,6 +16,8 @@ btnShow.addEventListener('click',function(){
 	let valueArea = document.getElementById('area').value;
   console.log(valueArea);
   var regexspace = valueArea.replace(/[\r\n\x0B\x0C\u0085\u2028\u2029]+/g, ", ");
+  var test = valueArea.replace(/, /g, '\n');
+  console.log(test);
   console.log(regexspace);
   var regex = new RegExp(',', 'g');
   let outKoma = regexspace.replace(regex, '');

@@ -4,11 +4,13 @@ const btnShow = document.getElementById('btnTrim');
 const btnDelete = document.getElementById('btnDelete');
 const counteChars = document.getElementById('counteChars');
 const showRes = document.getElementById('result');
+const showRescomma = document.getElementById('result_comma');
 const numberOfChar = document.getElementById('numberOfChar');
 const toLowerLetter = document.getElementById('toLowerLetter');
 const toUpperLetter = document.getElementById('toUpperLetter');
+const enterToComma = document.getElementById('enterToComma');
 
-
+/*  var regexspace = valueArea.replace(/[\r\n\x0B\x0C\u0085\u2028\u2029]+/g, ", ");*/
 
 btnShow.addEventListener('click',function(){
 	let valueArea = document.getElementById('area').value;
@@ -28,7 +30,8 @@ btnShow.addEventListener('click',function(){
     return upperArray.indexOf(item) == pos;
 })
   let trimedString = trimed.join(' ')
- 	showRes.innerHTML = trimedString;
+   showRes.innerHTML = trimedString;
+   showRescomma.innerHTML = keywordsWithCommas();
   numberOfChar.innerHTML = trimedString.length;
 })
 
@@ -36,7 +39,6 @@ btnDelete.addEventListener('click', ()=>{
   console.log('usuwa')
   let valueArea = document.getElementById('area');
   valueArea.value = "";
-  showRes.innerHTML = "";
   numberOfChar.innerHTML = 0;
 })
 
@@ -55,6 +57,25 @@ counteChars.addEventListener('click', ()=>{
   numberOfChar.innerHTML = valueArea.length;
 })
 
+enterToComma.addEventListener('click', ()=>{
+  
+  showRescomma.innerHTML = keywordsWithCommas();
+})
+
+commaToEnter.addEventListener('click', ()=>{
+  let valueArea = document.getElementById('area').value;
+  var regexspace = valueArea.replace(/, /g, '\n');
+  console.log(regexspace);
+  showRes.innerHTML = regexspace;
+})
+
+
+let keywordsWithCommas = ()=>{
+  let valueArea = document.getElementById('area').value;
+  var regexspace = valueArea.replace(/[\r\n\x0B\x0C\u0085\u2028\u2029]+/g, ", ");
+  console.log(regexspace);
+  return regexspace;
+}
 
 
 

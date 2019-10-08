@@ -1,17 +1,32 @@
 *{
 	outline: none;
 	font-size:23px;
+	padding: 0px;
+	margin: 0px;
 }
 body{
-	background: rgb(0,255,194);
-	background-size:cover;
+	background-image: linear-gradient(483deg, #09102c 16%, #4d519f);
+	height: 100vh;
 	background-repeat: no-repeat;
+}
+h1{
+	text-align: center;
+	color:whitesmoke;
+	font-size: 2em;
+}
+h1 span{
+	font-size: 1em;
+	color:silver;
+}
+button{
+	border:none;
 }
 .wrapper{
 	text-align: center;
-	padding: 0 5%;
+	padding: 1% 5%;
 	display: grid;
 	grid-template-columns:70% 30%;
+	border-radius: 10px;
 }
 .tollName{
 	font-size: 3em;
@@ -29,19 +44,27 @@ body{
 	text-align: left;
 	min-height: 200px;
 	margin:0 5px;
+	padding: 8px;
 }
 .resultBox{
 	display: inline-block;
 	text-align: left;
 	margin-top: 5px;
-	border:1px solid green;
-	box-shadow: inset 0 0 10px green;
 	min-height: 100px;
 	padding: 5px;
-  	white-space: wrap;
-  	word-wrap: break-word;
-  	background-color: whitesmoke;
-
+  	white-space: pre-wrap;
+	  word-wrap: break-word;
+}
+.resultBox h3{
+	color:whitesmoke;
+}
+.resultArea{
+	background-color: whitesmoke;
+	margin-top: -50px;
+	padding: 5px;
+}
+.counCharacters{
+	color:whitesmoke;
 }
 .boxWithButtons{
 	display: grid;
@@ -51,10 +74,11 @@ body{
 	grid-template-rows: 3fr 2fr 1fr;
 }
 .boxWithButtons button{
-	border-radius: 5px;
+	border-radius: 2px;
 }
 .boxWithButtons button:hover{
-	opacity: 0.9;
+	opacity: 0.5;
+	cursor: pointer;
 }
 .btnDelete{
 	background-color: #c0392b;
@@ -76,6 +100,6 @@ body{
 	text-align: left;
 }
 
-h1,h2,h3{
+h1{
 	font-family: impact;
 }
